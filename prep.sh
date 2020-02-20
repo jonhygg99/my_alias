@@ -57,7 +57,8 @@ echo "#include <stdlib.h>" >> "include/"$1".h"
 echo "#include <stdio.h>" >> "include/"$1".h"
 echo "#include <string.h>" >> "include/"$1".h"
 echo -e "#include <unistd.h>\n" >> "include/"$1".h"
-echo -e "#define EXIT_ERROR 84\n" >> "include/"$1".h"
+echo "#define EXIT_ERROR 84" >> "include/"$1".h"
+echo -e "#define EXIT_SUCCESS 0\n" >> "include/"$1".h"
 
 echo "#endif" >> "include/"$1".h"
 
