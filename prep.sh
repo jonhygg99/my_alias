@@ -42,12 +42,13 @@ echo -e "fclean: clean" >> "Makefile"
 echo -e "\trm -fr \$(NAME)\n" >> "Makefile"
 echo -e "re: fclean all\c" >> "Makefile"
 
-put_header "src/main.c" "c" "main.c"
-echo -e "#include \"$1.h\"\n" >> "src/main.c"
-echo -e "int main(int ac, char **ag)" >> "src/main.c"
-echo "{" >> "src/main.c"
-echo -e "\treturn (0);" >> "src/main.c"
-echo -e "}\c" >> "src/main.c"
+put_header "main.c" "c" "main.c"
+echo -e "#include \"$1.h\"\n" >> "main.c"
+echo -e "int main(int ac, char **ag)" >> "main.c"
+echo "{" >> "main.c"
+echo -e "\treturn (0);" >> "main.c"
+echo -e "}\c" >> "main.c"
+
 
 put_header "include/"$1".h" "h" "$1.h"
 echo "#ifndef _${1^^}_H_" >> "include/"$1".h"
@@ -65,3 +66,5 @@ echo $1 >>.gitignore
 echo "*.o" >> .gitignore
 echo "*~" >> .gitignore
 echo ".vgcore" >> .gitignore
+echo ".idea" >> .gitignore
+echo ".vscode" >> .gitignore
